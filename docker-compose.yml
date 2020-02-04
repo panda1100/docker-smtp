@@ -4,6 +4,8 @@ services:
     image: namshi/smtp
     container_name: smtp_relay
     restart: always
+    volumes:
+     - ${PWD}/email-addresses:/etc/email-addresses
     ports:
      - "25:25"
     environment:
